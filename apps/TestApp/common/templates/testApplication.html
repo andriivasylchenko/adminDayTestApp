@@ -1,0 +1,47 @@
+<ion-view title="Test Application">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <h1>Hey there!</h1>
+        <div>
+            <p>You have landed in MobileFirst Platform 7.1
+                <strong>TestApp</strong>
+            </p>
+
+            <p>This app is designed to verify MFP server installation during practice seminar labs.</p>
+
+            <p>
+                <strong>Lets perform few tests</strong>
+            </p>
+
+            <p>Click button below to initiate server connection</p>
+        </div>
+        <button class="button button-dark button-outline  icon-left ion-connection-bars" ng-click="connectToServer()">Connect to MFP server</button>
+        <div class="padding-top" ng-show="connectError">
+            <p>Something went
+                <strong>wrong</strong></p>
+
+            <p>Check you MFP installation</p>
+        </div>
+        <div class="padding-top" ng-show="connected">
+            <p>Well done! You are now
+                <strong>connected</strong> to MFP server!!!</p>
+
+            <p>Now let's try to get reply from MFP adapter</p>
+        </div>
+        <button class="button button-dark button-outline  icon-left ion-android-arrow-down" ng-show="connected" ng-click="callAdapter()">Call MFP adapter</button>
+        <div class="padding-top" ng-show="adapterError">
+            <p>Something went
+                <strong>wrong</strong></p>
+
+            <p>Check you MFP installation</p>
+        </div>
+        <div class="padding-top" ng-show="adapterCalled">
+            <p>Super! We got an adapter reply!</p>
+
+            <p>Final thing is to test MFP Analytics. Press the button below to log sample text and send it to analytics server</p>
+        </div>
+        <button class="button button-dark button-outline  icon-left ion-soup-can" ng-show="adapterCalled" ng-click="logSampleText()">Log sample text</button>
+        <div ng-show="analyticsCalled">
+            <p>Great! Now just need need to open analytics console and check if your text arrived.</p>
+        </div>
+    </ion-content>
+</ion-view>
